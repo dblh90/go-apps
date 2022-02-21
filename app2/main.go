@@ -1,16 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
 
-	"hamza.com/goapps/app2/models"
+	"hamza.com/goapps/app2/controllers"
 )
 
 func main() {
-	u := models.User{
-		ID:        2,
-		FirstName: "User1- FN",
-		LastName:  "User1- LN",
-	}
-	fmt.Println(u)
+	controllers.RegisterControllers()
+	http.ListenAndServe(":4000", nil)
 }
