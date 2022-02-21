@@ -1,7 +1,16 @@
 package main
 
-import "hamza.com/goapps/app2/models"
+import (
+	"fmt"
+
+	"hamza.com/goapps/app2/models"
+)
 
 func main() {
-	u := models.User
+	u := models.User{
+		ID:        2,
+		FirstName: "User1- FN",
+		LastName:  "User1- LN",
+	}
+	fmt.Println(u)
 }
