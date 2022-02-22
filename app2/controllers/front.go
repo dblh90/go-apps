@@ -1,6 +1,10 @@
 package controllers
 
-import "net/http"
+import (
+	"encoding/json"
+	"io"
+	"net/http"
+)
 
 func RegisterControllers() {
 	uc := newUserController()
@@ -14,4 +18,10 @@ func RegisterControllers() {
 	for _, v := range wellKnownPorts {
 		println(v)
 	}
+}
+
+func encodeReponseAsJSON(data interface{}, w io.Writer) {
+
+	enc := json.NewEncoder(w)
+	enc.Encode(data)
 }
